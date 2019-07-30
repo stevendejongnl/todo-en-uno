@@ -10,17 +10,20 @@
   "chrome_url_overrides": {
     "newtab": "newtab/newtab.html"
   },
+  "permissions": ["storage", "activeTab", "identity"],
   "browser_action": {
     "default_title": "Todo en uno",
     "default_popup": "popup/popup.html"
   },
   "background": {
-    "scripts": [
-      "background.js"
-    ]
+    "scripts": ["background.js"]
   },
   "options_ui": {
     "page": "options/options.html",
     "chrome_style": true
+  },
+  "oauth2": {
+    "client_id": "891602021869-lf29kcrm5n6ch6fgn59dnch649hiqc6c.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/drive"]
   }
 }

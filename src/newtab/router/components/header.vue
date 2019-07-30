@@ -1,12 +1,8 @@
 <template>
-  <v-app-bar
-    color="deep-purple accent-4"
-    dense
-    dark
-  >
+  <v-app-bar color="deep-purple accent-4" fixed dense dark>
     <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-    <v-toolbar-title>Page title</v-toolbar-title>
+    <v-toolbar-title>Todo en uno</v-toolbar-title>
 
     <v-spacer></v-spacer>
 
@@ -18,10 +14,7 @@
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
 
-    <v-menu
-      left
-      bottom
-    >
+    <v-menu left bottom>
       <template v-slot:activator="{ on }">
         <v-btn icon v-on="on">
           <v-icon>mdi-dots-vertical</v-icon>
@@ -29,11 +22,7 @@
       </template>
 
       <v-list>
-        <v-list-item
-          v-for="n in 5"
-          :key="n"
-          @click="() => {}"
-        >
+        <v-list-item v-for="n in 5" :key="n" @click="() => {}">
           <v-list-item-title>Option {{ n }}</v-list-item-title>
         </v-list-item>
       </v-list>
@@ -43,15 +32,9 @@
 
 <script>
 export default {
+  name: 'Header',
   data() {
     return {};
   },
 };
 </script>
-
-<style lang="scss" scoped>
-p {
-  font-size: 20px;
-  color: red;
-}
-</style>

@@ -9,8 +9,13 @@ const { version } = require('./package.json');
 const config = {
   mode: process.env.NODE_ENV,
   context: __dirname + '/src',
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+  },
   entry: {
-    'background': './background.js',
+    background: './background.js',
     'popup/popup': './popup/popup.js',
     'newtab/newtab': './newtab/newtab.js',
     'options/options': './options/options.js',
@@ -81,7 +86,7 @@ const config = {
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?emitFile=false',
-          outputPath: '/fonts/'
+          outputPath: '/fonts/',
         },
       },
     ],
@@ -102,7 +107,7 @@ const config = {
       {
         from: 'manifest.json',
         to: 'manifest.json',
-        transform: (content) => {
+        transform: content => {
           const jsonContent = JSON.parse(content);
           jsonContent.version = version;
 
